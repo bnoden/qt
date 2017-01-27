@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[6];
-    char stringdata0[89];
+    char stringdata0[91];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,12 +33,12 @@ QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 18), // "on_btnOpen_clicked"
 QT_MOC_LITERAL(2, 30, 0), // ""
 QT_MOC_LITERAL(3, 31, 18), // "on_btnExit_clicked"
-QT_MOC_LITERAL(4, 50, 18), // "on_btnSave_clicked"
-QT_MOC_LITERAL(5, 69, 19) // "on_btnClose_clicked"
+QT_MOC_LITERAL(4, 50, 20), // "on_btnSaveAs_clicked"
+QT_MOC_LITERAL(5, 71, 19) // "on_btnClose_clicked"
 
     },
     "MainWindow\0on_btnOpen_clicked\0\0"
-    "on_btnExit_clicked\0on_btnSave_clicked\0"
+    "on_btnExit_clicked\0on_btnSaveAs_clicked\0"
     "on_btnClose_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -79,7 +79,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_btnOpen_clicked(); break;
         case 1: _t->on_btnExit_clicked(); break;
-        case 2: _t->on_btnSave_clicked(); break;
+        case 2: _t->on_btnSaveAs_clicked(); break;
         case 3: _t->on_btnClose_clicked(); break;
         default: ;
         }

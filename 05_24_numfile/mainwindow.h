@@ -16,7 +16,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void fileLoad();
-    void fileSave();
+    void fileSaveAs();
     void fileClose();
 
 private slots:
@@ -24,7 +24,7 @@ private slots:
 
     void on_btnExit_clicked();
 
-    void on_btnSave_clicked();
+    void on_btnSaveAs_clicked();
 
     void on_btnClose_clicked();
 

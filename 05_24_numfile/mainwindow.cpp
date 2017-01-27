@@ -19,6 +19,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
 void MainWindow::fileLoad() {
     QFileDialog dialog(this);
     dialog.setFileMode(QFileDialog::ExistingFile);
@@ -30,19 +32,13 @@ void MainWindow::fileLoad() {
     QTextStream fileRead(&file);
     ui->fileView->setText(fileRead.readAll());
 
-    //int num = 0, sum = 0, count = 0;
     while (!file.atEnd()) {
         QByteArray line = file.readLine();
-        //count++;
-        //sum+=num;
     }
-    //QString strNumProc = "This file contains " + QString::number(count) +
-    //        " numbers. The sum of these numbers is " + QString::number(sum) +
-    //        "The average is " + QString::number(sum/count);
     ui->numProc->setText(fileName);
 }
 
-void MainWindow::fileSave() {
+void MainWindow::fileSaveAs() {
     QString fileName;
     fileName = QFileDialog::getSaveFileName(this);
     QFile file(fileName);
@@ -66,9 +62,9 @@ void MainWindow::on_btnExit_clicked()
     QApplication::quit();
 }
 
-void MainWindow::on_btnSave_clicked()
+void MainWindow::on_btnSaveAs_clicked()
 {
-    MainWindow::fileSave();
+    MainWindow::fileSaveAs();
 }
 
 void MainWindow::on_btnClose_clicked()
