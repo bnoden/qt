@@ -45,8 +45,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(741, 488);
-        MainWindow->setStyleSheet(QLatin1String("background-color: rgb(29, 33, 15);\n"
-"border-color: rgb(129, 201, 232);"));
+        MainWindow->setStyleSheet(QStringLiteral("background-color: rgb(29, 33, 15);"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
