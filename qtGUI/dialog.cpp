@@ -21,5 +21,11 @@ Dialog::~Dialog()
 
 void Dialog::on_pushButton_clicked()
 {
-    QMessageBox::information(this, "Title here", "Hey you");
+    QMessageBox::information(this, "Title", "Button pushed successfully");
+}
+
+void Dialog::on_pushButton_2_clicked()
+{
+    //ui->lineEdit->setText("button pushed successfully");
+    QMessageBox::information(this, "info", "Password: " + ui->lineEdit->text());
 }
