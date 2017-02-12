@@ -10,6 +10,10 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    for (int i = 0b0; i < 0x20; i++) {
+        ui->listWidget->addItem("r"+QString::number(i));
+    }
+
     for (int i = 0x01; i < 0b00010001; i++) {
         ui->comboBox->addItem("item " + QString::number(i));
     }
@@ -58,4 +62,19 @@ void Dialog::on_pushButton_4_clicked()
 void Dialog::on_pushButton_5_clicked()
 {
     QMessageBox::information(this, "Box", ui->comboBox->currentText());
+}
+
+QString vH = "HIGH", vL = "LOW";
+void Dialog::on_pushButton_6_clicked()
+{
+    QListWidgetItem *item = ui->listWidget->currentItem();
+    if (item->text() != vH) {
+        item->setText(vH);
+        item->setTextColor(Qt::green);
+} else {
+        item->setText(vL);
+        item->setTextColor(Qt::red);
+    }
+
+
 }

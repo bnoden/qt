@@ -20,6 +20,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 
@@ -40,12 +41,15 @@ public:
     QRadioButton *radioButton2;
     QComboBox *comboBox;
     QPushButton *pushButton_5;
+    QListWidget *listWidget;
+    QPushButton *pushButton_6;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QStringLiteral("Dialog"));
-        Dialog->resize(293, 263);
+        Dialog->resize(246, 437);
+        Dialog->setStyleSheet(QStringLiteral(""));
         gridLayout = new QGridLayout(Dialog);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -58,6 +62,7 @@ public:
         pushButton = new QPushButton(Dialog);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton->setStyleSheet(QStringLiteral(""));
 
         gridLayout->addWidget(pushButton, 0, 1, 1, 1);
 
@@ -112,6 +117,19 @@ public:
 
         gridLayout->addWidget(pushButton_5, 5, 1, 1, 1);
 
+        listWidget = new QListWidget(Dialog);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setStyleSheet(QLatin1String("background:#000000;\n"
+"color:#cccccc;"));
+
+        gridLayout->addWidget(listWidget, 6, 0, 1, 2);
+
+        pushButton_6 = new QPushButton(Dialog);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout->addWidget(pushButton_6, 7, 0, 1, 2);
+
 
         retranslateUi(Dialog);
 
@@ -130,6 +148,7 @@ public:
         pushButton_4->setText(QApplication::translate("Dialog", "4", Q_NULLPTR));
         radioButton2->setText(QApplication::translate("Dialog", "that", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("Dialog", "5", Q_NULLPTR));
+        pushButton_6->setText(QApplication::translate("Dialog", "6", Q_NULLPTR));
     } // retranslateUi
 
 };
