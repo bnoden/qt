@@ -9,6 +9,11 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+
+    for (int i = 0x01; i < 0b00010001; i++) {
+        ui->comboBox->addItem("item " + QString::number(i));
+    }
+
     ui->checkBox->setChecked(true);
 
     QString name = "bnoden";
@@ -48,4 +53,9 @@ void Dialog::on_pushButton_4_clicked()
     if(ui->radioButton2->isChecked()) {
         QMessageBox::information(this, "Look", "Look at " + ui->radioButton2->text());
     }
+}
+
+void Dialog::on_pushButton_5_clicked()
+{
+    QMessageBox::information(this, "Box", ui->comboBox->currentText());
 }

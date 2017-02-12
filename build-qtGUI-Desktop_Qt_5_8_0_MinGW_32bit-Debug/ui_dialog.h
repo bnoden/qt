@@ -14,8 +14,9 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -27,7 +28,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Dialog
 {
 public:
-    QFormLayout *formLayout;
+    QGridLayout *gridLayout;
     QLabel *label;
     QPushButton *pushButton;
     QLineEdit *lineEdit;
@@ -37,66 +38,79 @@ public:
     QRadioButton *radioButton1;
     QPushButton *pushButton_4;
     QRadioButton *radioButton2;
+    QComboBox *comboBox;
+    QPushButton *pushButton_5;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QStringLiteral("Dialog"));
-        Dialog->resize(208, 172);
-        formLayout = new QFormLayout(Dialog);
-        formLayout->setSpacing(6);
-        formLayout->setContentsMargins(11, 11, 11, 11);
-        formLayout->setObjectName(QStringLiteral("formLayout"));
+        Dialog->resize(293, 263);
+        gridLayout = new QGridLayout(Dialog);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         label = new QLabel(Dialog);
         label->setObjectName(QStringLiteral("label"));
 
-        formLayout->setWidget(0, QFormLayout::LabelRole, label);
+        gridLayout->addWidget(label, 0, 0, 1, 1);
 
         pushButton = new QPushButton(Dialog);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setCursor(QCursor(Qt::PointingHandCursor));
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, pushButton);
+        gridLayout->addWidget(pushButton, 0, 1, 1, 1);
 
         lineEdit = new QLineEdit(Dialog);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setEchoMode(QLineEdit::Password);
 
-        formLayout->setWidget(1, QFormLayout::LabelRole, lineEdit);
+        gridLayout->addWidget(lineEdit, 1, 0, 1, 1);
 
         pushButton_2 = new QPushButton(Dialog);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setCursor(QCursor(Qt::PointingHandCursor));
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, pushButton_2);
+        gridLayout->addWidget(pushButton_2, 1, 1, 1, 1);
 
         checkBox = new QCheckBox(Dialog);
         checkBox->setObjectName(QStringLiteral("checkBox"));
 
-        formLayout->setWidget(2, QFormLayout::LabelRole, checkBox);
+        gridLayout->addWidget(checkBox, 2, 0, 1, 1);
 
         pushButton_3 = new QPushButton(Dialog);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setCursor(QCursor(Qt::PointingHandCursor));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, pushButton_3);
+        gridLayout->addWidget(pushButton_3, 2, 1, 1, 1);
 
         radioButton1 = new QRadioButton(Dialog);
         radioButton1->setObjectName(QStringLiteral("radioButton1"));
         radioButton1->setChecked(true);
 
-        formLayout->setWidget(3, QFormLayout::LabelRole, radioButton1);
+        gridLayout->addWidget(radioButton1, 3, 0, 1, 1);
 
         pushButton_4 = new QPushButton(Dialog);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setCursor(QCursor(Qt::PointingHandCursor));
 
-        formLayout->setWidget(3, QFormLayout::FieldRole, pushButton_4);
+        gridLayout->addWidget(pushButton_4, 3, 1, 1, 1);
 
         radioButton2 = new QRadioButton(Dialog);
         radioButton2->setObjectName(QStringLiteral("radioButton2"));
 
-        formLayout->setWidget(4, QFormLayout::LabelRole, radioButton2);
+        gridLayout->addWidget(radioButton2, 4, 0, 1, 1);
+
+        comboBox = new QComboBox(Dialog);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+
+        gridLayout->addWidget(comboBox, 5, 0, 1, 1);
+
+        pushButton_5 = new QPushButton(Dialog);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout->addWidget(pushButton_5, 5, 1, 1, 1);
 
 
         retranslateUi(Dialog);
@@ -115,6 +129,7 @@ public:
         radioButton1->setText(QApplication::translate("Dialog", "this", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("Dialog", "4", Q_NULLPTR));
         radioButton2->setText(QApplication::translate("Dialog", "that", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("Dialog", "5", Q_NULLPTR));
     } // retranslateUi
 
 };
